@@ -117,9 +117,10 @@ namespace login.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
 
-                var user = await _signInManager.UserManager.FindByNameAsync(Input.Email);
 
-                if(user == null) {
+                var user = await _signInManager.UserManager.FindByNameAsync(Input.UserName);
+
+                if (user == null) {
                     user = new IdentityUser();
                 }
 
